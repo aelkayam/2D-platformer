@@ -14,7 +14,7 @@ collision_mask = 8
 script = ExtResource( 2 )
 max_speed = Vector2( 800, 1200 )
 
-[node name="Player" type="Sprite" parent="."]
+[node name="player" type="Sprite" parent="."]
 position = Vector2( 0, -48 )
 texture = ExtResource( 1 )
 
