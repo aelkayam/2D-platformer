@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
 [ext_resource path="res://assets/background.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Levels/Level02.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -36,13 +37,18 @@ points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
 
 [node name="Level01" type="Node2D"]
 __meta__ = {
-"_edit_vertical_guides_": [ 10240.0 ]
+"_edit_horizontal_guides_": [  ]
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UserInterfaceLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="UserInterface" parent="UserInterfaceLayer" instance=ExtResource( 8 )]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -100
 
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
+[node name="Background" type="TextureRect" parent="BackgroundLayer"]
 margin_right = 1920.0
 margin_bottom = 1080.0
 texture = ExtResource( 2 )
@@ -119,13 +125,13 @@ position = Vector2( 4680, 713 )
 position = Vector2( 4727, 807 )
 
 [node name="Coin10" parent="Coins" instance=ExtResource( 3 )]
-position = Vector2( 5991, 623 )
+position = Vector2( 5937, 753 )
 
 [node name="Coin11" parent="Coins" instance=ExtResource( 3 )]
-position = Vector2( 5911, 699 )
+position = Vector2( 5845, 648 )
 
 [node name="Coin12" parent="Coins" instance=ExtResource( 3 )]
-position = Vector2( 5854, 795 )
+position = Vector2( 5749, 755 )
 
 [node name="Coin13" parent="Coins" instance=ExtResource( 3 )]
 position = Vector2( 6961, 656 )
